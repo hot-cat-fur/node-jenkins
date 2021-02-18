@@ -1,5 +1,7 @@
 pipeline {
     agent any
+
+    
     
     stages {
         stage("Init"){
@@ -14,7 +16,7 @@ pipeline {
         }
         stage("Running"){
             steps {
-                npm start
+               echo "we are back in buisness ${currentBuild.result}"
             }
         }
     }
