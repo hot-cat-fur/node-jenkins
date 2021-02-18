@@ -24,7 +24,7 @@ pipeline {
                echo "we are back in buisness ${currentBuild.result}"
             }
         }
-         stage("Running"){
+         stage("Not Running"){
             when {
                 expression {
                     env.BRANCH_NAME != 'main'
