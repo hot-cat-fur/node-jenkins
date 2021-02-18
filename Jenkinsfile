@@ -15,9 +15,25 @@ pipeline {
             }
         }
         stage("Running"){
+            when {
+                expression {
+                    env.BRANCH_NAME == 'main'
+                }
+            }
             steps {
                echo "we are back in buisness ${currentBuild.result}"
             }
         }
+         stage("Running"){
+            when {
+                expression {
+                    env.BRANCH_NAME != 'main'
+                }
+            }
+            steps {
+               echo "we are back in NOT buisness ${currentBuild.result}"
+            }
+        }
+
     }
 }
