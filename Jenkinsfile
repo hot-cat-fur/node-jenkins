@@ -4,11 +4,13 @@ pipeline {
     stages {
         stage("Init"){
             steps {
-               echo "hello there"
+               echo "init step"
+               sh 'npm install'
             }
         }
         stage("Testing"){
             steps {
+               echo "testing step"
                sh 'npm test'
             }
         }
